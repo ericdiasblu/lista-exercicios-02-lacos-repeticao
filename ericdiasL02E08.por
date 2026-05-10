@@ -3,22 +3,24 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro numero, numeroMaior = 0, numeroMenor = 0
-		real soma = 0.045
+		inteiro numero, numeroMaior, numeroMenor
+		real soma = 0
 
 		para (inteiro i = 1; i <= 10; i++) {
 			escreva("Informe o "+i+"º número inteiro: ")
 			leia(numero)
-
-			se (numeroMaior == 0 ou numero > numeroMaior) {
+			se (i == 1) {
 				numeroMaior = numero
-			}
-
-			se (numeroMenor == 0 ou numero < numeroMenor) {
 				numeroMenor = numero
+			} senao {
+				se (numero > numeroMaior) {
+					numeroMaior = numero
+				}
+				se (numero < numeroMenor) {
+					numeroMenor = numero
+				}
 			}
-
-			soma+=numero
+			soma += numero
 		}
 
 		escreva("O maior número é: "+numeroMaior)
